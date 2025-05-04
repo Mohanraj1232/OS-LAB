@@ -12,7 +12,7 @@ void main(){
     char c,*s,*shm;
 
     shmid=shmget(key,27,IPC_CREAT | 0666);
-    shm=shmat(key,NULL,0);
+    shm=shmat(shmid,NULL,0);
     s=shm;
     childpid=fork();
     if(childpid<0){
